@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empanadas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>LISTA DE EMPANADAS</h1>
+        <p>Las más deliciosas empanadas</p>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Descripcion</th>
+                <th>Costo</th>
+            </tr>
+            {% for empanada in empanadas %}
+            <tr>
+                <td>{{ empanada['id'] }}</td>
+                <td>{{ empanada['descripcion'] }}</td>
+                <td>{{ empanada['costo'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+</html>
